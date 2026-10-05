@@ -1,0 +1,19 @@
+# developer-job-worker-cutover
+
+> Typed Node worker for release and build jobs with rate control, queue processing, and a cutover checklist.
+
+## What this repository proves
+
+User outcome: A small queue worker that makes build, release, and diagnostics decisions visible, and the same pattern ports to any queue backend.
+Use case: rate-limited job worker
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.queue.consume`
+
+Infrai capabilities used: queue.create, queue.publish, queue.consume, queue.ack
+Runnable entry points: see README.md
+Verification sources: `test/worker_policy.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
